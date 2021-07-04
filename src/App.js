@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ProfileBlock from './component/Profile';
+import image from './image/example.png'
+import NavBar from "./component/Nav";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="body">
+      <NavBar/>
+      <div className="App">
+        <div className="extra-content-area">
+          
+        </div>
+        <div className="main-content">
+        </div>
+        <div className="profile-area">
+          <ProfileBlock
+            name="Nguyen Hoang Lam"
+            imgSrc={image}
+            nickname='The Little Sadness'
+            age="21"
+            job="Front-end/Mobile Developer"
+            description="Hello there! My name is Nguyen Hoang Lam,
+            you can also call me Lam Emilie. I'm a shy person and
+            extremely passionate about web technology, mobile and
+            games."
+          />
+        </div>
+      </div>
     </div>
   );
 }
