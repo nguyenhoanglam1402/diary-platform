@@ -3,6 +3,8 @@ import './App.css';
 import ProfileBlock from './component/Profile';
 import image from './image/example.png'
 import NavBar from "./component/Nav";
+import ReaderListBlock from "./component/ReadersList";
+import PostItemComponent from "./component/PostItem";
 
 
 function App() {
@@ -11,9 +13,12 @@ function App() {
       <NavBar/>
       <div className="App">
         <div className="extra-content-area">
-          
+          <ReaderListBlock/>
         </div>
         <div className="main-content">
+          <PostItemComponent
+            novel="Tiếng thở dài"
+            releasedDate="July 5th, 2021"/>
         </div>
         <div className="profile-area">
           <ProfileBlock
