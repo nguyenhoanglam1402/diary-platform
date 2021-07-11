@@ -3,9 +3,15 @@
   flex-direction: column;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 .App {
   display: flex;
   flex-flow: row;
+  justify-content: space-between;
   padding: 10px;
   padding-top: 10px;
 }
@@ -43,6 +49,12 @@ body {
     url("/src/font/font/lemonjellypersonaluse-deqr-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+}
+
+.brand-logo {
+  font-family: lemon_jelly_personal_useRg;
+  font-size: 30px;
+  margin: 5px 0px 10px;
 }
 
 .profile-name-block {
@@ -141,6 +153,8 @@ body {
 
 .main-content {
   flex: 1;
+  height: calc(100vh - 90px);
+  overflow: auto;
 }
 
 .button-content {
@@ -174,7 +188,7 @@ body {
   display: flex;
   list-style: none;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   flex: 2;
   margin: 5px 20px;
   color: rgba(255, 255, 255, 0.616);
@@ -220,6 +234,11 @@ body {
   flex-direction: row;
   justify-content: space-around;
   background-color: #242526;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
 }
 
 #search-box {
@@ -230,6 +249,8 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   padding-inline-start: 30px;
   font-size: 14px;
+  background-color: #3a3b3c;
+  margin-top: 2px;
 }
 
 #search-box:active {
@@ -239,7 +260,8 @@ body {
 .input-searchbox-area {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 20px;
 }
 
 .nav-icon {
@@ -271,4 +293,302 @@ body {
 
 .notification-btn:active {
   background-color: #2f3031;
+}
+
+.fa-user-friends {
+  color: #30b3ff;
+  font-size: 25px;
+}
+
+.fa-award {
+  color: #ffb100;
+  font-size: 25px;
+}
+
+.block-title {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.178);
+  padding-bottom: 10px;
+}
+
+.title-block-span {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.detail-block-title {
+  color: rgb(113, 180, 255);
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.text-detail-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.block-title div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reader-list,
+.trending-list {
+  padding: 10px;
+  width: 350px;
+  border-radius: 10px;
+}
+
+.content-list-friend,
+.content-list-trending {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 5px;
+  overflow-y: hidden;
+  max-height: 320px;
+}
+
+.content-list-friend:hover,
+.content-list-trending:hover {
+  overflow-y: scroll;
+}
+
+.friend-item-block,
+.catergory-item-block {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.friend-item-block:hover,
+.catergory-item-block:hover {
+  background-color: #3a3b3c;
+}
+
+.friend-detail,
+.trending-novel-detail {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 15px;
+  overflow: hidden;
+}
+
+.friend-name,
+.novel-name {
+  color: white;
+  font-weight: 500;
+}
+
+.status {
+  display: block;
+  color: rgb(113, 180, 255);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.friend-avatar {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.friend-item-block div,
+.catergory-item-block div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3a3b3c;
+  border-radius: 5px;
+}
+
+.cover-img {
+  width: 100%;
+  height: 500px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: white;
+}
+
+.novel-title {
+  color: rgba(255, 255, 255, 0.856);
+  font-family: "Dancing Script";
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  padding-top: 10px;
+}
+
+.post-title div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.editor-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+
+.post-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.post-content {
+  background-color: #2f3031;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 25px 0px;
+}
+
+.post-content-para {
+  padding: 0px 4rem;
+}
+
+.post-content-para p {
+  text-overflow: clip;
+  text-align: justify;
+  color: rgba(255, 255, 255, 0.699);
+}
+
+.ck-editor__editable_inline {
+  min-height: calc(584px);
+}
+
+.ck-editor__editable_inline:focus-visible {
+  border: none !important;
+}
+
+.editor-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  background-color: #242526;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.sidebar-extra-content {
+  display: flex;
+  background-color: #242526;
+  margin-right: 10px;
+  flex-direction: column;
+  border-radius: 10px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.side-bar-wrap {
+  overflow-y: hidden;
+  height: calc(100vh - 160px);
+}
+
+.side-bar-wrap:hover {
+  overflow-y: auto;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.699);
+}
+
+.copyright p {
+  text-align: center;
+  margin: 5px 0;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.copyright ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+  justify-content: space-evenly;
+}
+
+.copyright li {
+  list-style: none;
+  color: rgba(255, 255, 255, 0.699);
+  font-size: 12px;
+}
+
+.ck.ck-editor__main > .ck-editor__editable {
+  background-color: #2f3031 !important;
+  border: none;
+  color: rgba(255, 255, 255, 0.699);
+}
+
+.editor-title input {
+  padding: 10px 15px;
+  font-size: 15px;
+  text-align: center;
+  background-color: #2f3031 !important;
+  border: none;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.699);
+}
+
+.editor-title input:focus-visible {
+  border: none !important;
+}
+
+.submit-block {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.submit-btn {
+  background-color: royalblue;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.699);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.submit-btn:hover {
+  background-color: rgb(56, 91, 194);
+}
+
+.submit-btn:active {
+  background-color: rgb(117, 145, 230);
 }
