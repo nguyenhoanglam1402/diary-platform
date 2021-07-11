@@ -3,9 +3,15 @@
   flex-direction: column;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 .App {
   display: flex;
   flex-flow: row;
+  justify-content: space-between;
   padding: 10px;
   padding-top: 10px;
 }
@@ -43,6 +49,12 @@ body {
     url("/src/font/font/lemonjellypersonaluse-deqr-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+}
+
+.brand-logo {
+  font-family: lemon_jelly_personal_useRg;
+  font-size: 30px;
+  margin: 5px 0px 10px;
 }
 
 .profile-name-block {
@@ -141,6 +153,8 @@ body {
 
 .main-content {
   flex: 1;
+  height: calc(100vh - 90px);
+  overflow: auto;
 }
 
 .button-content {
@@ -220,6 +234,11 @@ body {
   flex-direction: row;
   justify-content: space-around;
   background-color: #242526;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
 }
 
 #search-box {
@@ -281,6 +300,11 @@ body {
   font-size: 25px;
 }
 
+.fa-award {
+  color: #ffb100;
+  font-size: 25px;
+}
+
 .block-title {
   display: flex;
   flex-direction: row;
@@ -313,18 +337,15 @@ body {
   justify-content: center;
 }
 
-.reader-panel {
-  padding: 0px 10px 10px 0px;
-}
-
-.reader-list {
+.reader-list,
+.trending-list {
   padding: 10px;
-  background-color: #242526;
   width: 350px;
   border-radius: 10px;
 }
 
-.content-list-friend {
+.content-list-friend,
+.content-list-trending {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -333,11 +354,13 @@ body {
   max-height: 320px;
 }
 
-.content-list-friend:hover {
+.content-list-friend:hover,
+.content-list-trending:hover {
   overflow-y: scroll;
 }
 
-.friend-item-block {
+.friend-item-block,
+.catergory-item-block {
   padding: 8px 10px;
   display: flex;
   flex-direction: row;
@@ -345,11 +368,13 @@ body {
   cursor: pointer;
 }
 
-.friend-item-block:hover {
+.friend-item-block:hover,
+.catergory-item-block:hover {
   background-color: #3a3b3c;
 }
 
-.friend-detail {
+.friend-detail,
+.trending-novel-detail {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -357,12 +382,14 @@ body {
   overflow: hidden;
 }
 
-.friend-name {
+.friend-name,
+.novel-name {
   color: white;
   font-weight: 500;
 }
 
 .status {
+  display: block;
   color: rgb(113, 180, 255);
   font-size: 13px;
   font-weight: 500;
@@ -377,9 +404,11 @@ body {
   border-radius: 50%;
 }
 
-.friend-item-block div {
+.friend-item-block div,
+.catergory-item-block div {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 ::-webkit-scrollbar {
@@ -414,13 +443,19 @@ body {
   margin-bottom: 10px;
   margin-top: 0px;
   padding-top: 10px;
-  width: fit-content;
 }
 
 .post-title div {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.editor-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 20px;
 }
 
 .post-title {
@@ -445,8 +480,115 @@ body {
   padding: 0px 4rem;
 }
 
-.paragraph {
+.post-content-para p {
   text-overflow: clip;
   text-align: justify;
   color: rgba(255, 255, 255, 0.699);
+}
+
+.ck-editor__editable_inline {
+  min-height: calc(584px);
+}
+
+.ck-editor__editable_inline:focus-visible {
+  border: none !important;
+}
+
+.editor-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  background-color: #242526;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.sidebar-extra-content {
+  display: flex;
+  background-color: #242526;
+  margin-right: 10px;
+  flex-direction: column;
+  border-radius: 10px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.side-bar-wrap {
+  overflow-y: hidden;
+  height: calc(100vh - 160px);
+}
+
+.side-bar-wrap:hover {
+  overflow-y: auto;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.699);
+}
+
+.copyright p {
+  text-align: center;
+  margin: 5px 0;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.copyright ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+  justify-content: space-evenly;
+}
+
+.copyright li {
+  list-style: none;
+  color: rgba(255, 255, 255, 0.699);
+  font-size: 12px;
+}
+
+.ck.ck-editor__main > .ck-editor__editable {
+  background-color: #2f3031 !important;
+  border: none;
+  color: rgba(255, 255, 255, 0.699);
+}
+
+.editor-title input {
+  padding: 10px 15px;
+  font-size: 15px;
+  text-align: center;
+  background-color: #2f3031 !important;
+  border: none;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.699);
+}
+
+.editor-title input:focus-visible {
+  border: none !important;
+}
+
+.submit-block {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.submit-btn {
+  background-color: royalblue;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.699);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.submit-btn:hover {
+  background-color: rgb(56, 91, 194);
+}
+
+.submit-btn:active {
+  background-color: rgb(117, 145, 230);
 }
